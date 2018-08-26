@@ -9,7 +9,7 @@
   <version>1.0</version>
 
   <name>digits-sum</name>
-  <url>http://www.example.com</url>
+  <url>https://github.com/cofins</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
