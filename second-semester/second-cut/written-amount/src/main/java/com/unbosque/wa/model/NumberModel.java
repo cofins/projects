@@ -6,7 +6,7 @@ public class NumberModel {
 
 	private int digit;
 	private String[] names;
-	private String[] cnames;
+	private String[] snames;
 
 	// Constructors
 
@@ -15,10 +15,10 @@ public class NumberModel {
 		this.names = names;
 	}
 
-	public NumberModel(int digit, String[] names, String[] cnames) {
+	public NumberModel(int digit, String[] names, String[] snames) {
 		this.digit = digit;
 		this.names = names;
-		this.cnames = cnames;
+		this.snames = snames;
 	}
 
 	// Accessors
@@ -31,8 +31,8 @@ public class NumberModel {
 		return this.names[index];
 	}
 
-	public String getCname(int index) {
-		return (this.cnames != null) ? this.cnames[index] : null;
+	public String getSname(int index) {
+		return (this.snames != null) ? this.snames[index] : null;
 	}
 
 }

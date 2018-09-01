@@ -2,7 +2,6 @@ package com.unbosque.wa.model;
 
 public class Constants {
 
-
 	// NUMBERS LIST
 
 	public static final NumberModel[] NUMBERS = new NumberModel[] {
@@ -18,5 +17,8 @@ public class Constants {
 		 new NumberModel(9, new String[] { "novecientos", "noventa", "nueve" }),
 	};
 
-	public static final String[] POSTFIXES = new String[] { "millon", "billon", "trillon", "cuatrillon" };
+	public static final String[] POSTFIXES = new String[] { "mil", "millones", "billones", "trillones", "cuatrillones" };
+	public static final String SEPARATOR = " y ";
+	public static final String WHITE_SPACE = " ";
+
 }
