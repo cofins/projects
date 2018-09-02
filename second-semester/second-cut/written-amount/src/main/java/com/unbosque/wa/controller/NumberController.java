@@ -1,17 +1,65 @@
 package com.unbosque.wa.controller;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.File;
+
 import java.util.Arrays;
+
+import java.lang.StringBuilder;
+
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 import com.unbosque.wa.view.NumberView;
 import com.unbosque.wa.model.NumberModel;
 import com.unbosque.wa.model.Constants;
 
-public class NumberController {
+public class NumberController implements ActionListener {
 
 	private NumberView view;
 
 	public NumberController() {
 		this.view = new NumberView();
+		this.view.setListener(this);
+	}
+
+	public void actionPerformed(ActionEvent e) {
+		switch (e.getActionCommand()) {
+			case NumberView.CONVERT_BUTTON: save(); load(); break;
+		}
+	}
+
+	private void save() {
+		try {
+			// get root path of application, and save data into "data.txt"
+			File file = new File(Constants.FILE_PATH);
+			if(!file.exists()) {
+				file.createNewFile();
+			}
+			FileWriter fw = new FileWriter(file, true);
+
+			fw.append(this.convert(this.view.getNumber()) + "\n");
+			fw.close();
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
+
+	private void load() {
+		try (BufferedReader br = new BufferedReader(new FileReader(Constants.FILE_PATH))) {
+			StringBuilder sb = new StringBuilder();
+			String line;
+
+			while ((line = br.readLine()) != null) {
+				sb.append(line + "\n");
+			}
+			this.view.setText(sb.toString());
+			br.close();
+		} catch(Exception e) {
+			System.out.println(e.getMessage());
+		}
 	}
 
 	public String convert(int n) {
@@ -36,7 +84,7 @@ public class NumberController {
 		// return to the original order
 		this.r(w);
 
-		return Arrays.toString(w);
+		return Arrays.toString(w).replaceAll("\\[|\\]", "").replaceAll(",", " ");
 	}
 
 	// parse thousand number to written
