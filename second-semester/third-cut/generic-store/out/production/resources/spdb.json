@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "sellId": 1,
+    "productId": 1,
+    "amount": 1
+  },
+  {
+    "id": 2,
+    "sellId": 2,
+    "productId": 2,
+    "amount": 4
+  },
+  {
+    "id": 3,
+    "sellId": 3,
+    "productId": 3,
+    "amount": 5
+  },
+  {
+    "id": 4,
+    "sellId": 4,
+    "productId": 3,
+    "amount": 3
+  }
+]
