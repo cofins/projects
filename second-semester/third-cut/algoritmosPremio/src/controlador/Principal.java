@@ -15,7 +15,7 @@ public class Principal implements ActionListener {
 
 	private VistaMundo vista;
 	private Mundo modelo;
-
+	
 	public Principal() {
 		modelo = new Mundo();
 		vista = new VistaMundo(this);
@@ -43,7 +43,7 @@ public class Principal implements ActionListener {
 			this.vista.getEjercicio2Vista().setResultado(this.modelo.getResultado2().toString());
 		}
 			break;
-			
+				
 		case Ejercicio3Vista.EJERCICIO3_BOTON_CALCULAR: {
 			int numero = this.vista.getEjercicio3Vista().getNumero();
 			this.modelo.setParametrosEjercicio3(numero);

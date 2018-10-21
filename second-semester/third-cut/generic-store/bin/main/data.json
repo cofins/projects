@@ -1,0 +1,6 @@
+{
+  "productDbPath": "/pdb.json",
+  "sellDbPath": "/sdb.json",
+  "sellProductDbPath": "/spdb.json",
+  "VAT" : 0.19
+}
